@@ -1,0 +1,88 @@
+{
+	"name": "cit/wiki-service",
+	"description": "Wiki Services is a platform developed by cit students",
+	"keywords": ["laravel", "framework", "sentry", "bootstrap", "wiki","services", "wiki services", "adisa", "cit", "login"],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Xhulian Hysollari",
+			"email": "xhulioh25@hotmail.com"
+		},
+		{
+		  	"name": "Erkid Hoxholli",
+		  	"email": "e.hoxholli@cit.edu.al"
+		},
+		{
+		  	"name": "Geri Enesi",
+		  	"email": "g.enesi@cit.edu.al"
+		},
+		{
+		  	"name": "Roel Tafa",
+		  	"email": "r.tafa@cit.edu.al"
+		}
+	],
+	"require": {
+		"php": ">=5.5.0",
+		"laravel/framework": "5.0.*",
+		"illuminate/html": "5.0.*",
+		"lightgear/asset": "~2.0",
+		"fideloper/proxy": "~3.0",
+		"graham-campbell/exceptions": "~1.0",
+		"graham-campbell/core": "~2.0",
+		"graham-campbell/htmlmin": "~3.0",
+		"graham-campbell/markdown": "~3.0",
+		"graham-campbell/binput": "~3.0",
+		"graham-campbell/throttle": "~3.0",
+		"graham-campbell/credentials": "0.4.*",
+		"graham-campbell/navigation": "~2.0",
+		"graham-campbell/contact": "0.3.*",
+		"graham-campbell/logviewer": "0.3.*",
+		"mccool/laravel-auto-presenter": "~3.0",
+		"barryvdh/laravel-debugbar": "~2.0",
+		"fortawesome/font-awesome": "^4.0@dev",
+		"vi-kon/laravel-diff": "dev-master",
+		"mcamara/laravel-localization": "dev-master"
+	},
+    "require-dev": {
+        "graham-campbell/testbench": "~2.0",
+        "doctrine/dbal": "~2.5"
+    },
+    "suggest": {
+        "graham-campbell/cloudflare": "Integration with CloudFlare."
+    },
+	"autoload": {
+		"classmap": [
+		  	"database"
+		],
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php"
+        ]
+    },
+	"scripts": {
+		"post-install-cmd": [
+			"php artisan clear-compiled",
+			"php artisan optimize --force"
+		],
+		"pre-update-cmd": [
+		  	"php artisan clear-compiled"
+		],
+		"post-update-cmd": [
+			"php artisan clear-compiled",
+			"php artisan optimize --force"
+		],
+		"post-create-project-cmd": [
+		  	"php artisan key:generate"
+		]
+	},
+	"config": {
+	  	"preferred-install": "dist"
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
+}
